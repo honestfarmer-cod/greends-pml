@@ -16,15 +16,13 @@ Links for class resources:
 [Overview notebook](https://github.com/isa-ulisboa/greends-pml/blob/main/ML_overview_with_examples.ipynb) This notebook provides an overview of the full course and contains pointers for other sources of relevant information and Python scripts.
 --->
 
----
-
 # Sessions
 Each description below includes the summary of the topics covered in the session, as well as the description of assignments and links to videos or other materials that students should work through.
 
 <details markdown="block">
-<summary> Introduction (Feb 21, 2025) </summary>
+<summary> Introduction (Feb 20, 2026) </summary>
 
-The goal of the first class is to give an introduction to ML and also to show some of the problems that can be addressed with the techniques and tools that will be discussed during the semester. The examples will be run on Colab.
+We do an introduction to ML and compare it with *statistical modelling* using the simplest possible model, *linear regression*. We survey some of the problems that can be addressed with the techniques and tools that will be discussed during the semester. The examples will be run on Colab.
 
 - See (Raschka et al, 2022), Chapter 1: Giving Computers the Ability to Learn from Data
 - Types of machine learning problems: supervised learning, unsupervised learning, reinforcement learning. Suggestion: check video [Types of machine learning](https://www.youtube.com/watch?v=gh6mNF2BGvk)
@@ -34,6 +32,8 @@ The goal of the first class is to give an introduction to ML and also to show so
 - Statistics vs Machine Learning: Check video: [When to use stats vs. ML?](https://www.youtube.com/watch?v=xUsm34qnE30)
 - An example of a prediction task for time series: check the notebook [modeling ground water levels](https://www.kaggle.com/code/andreshg/timeseries-analysis-a-complete-guide/) for the Kaggle competition [Acea Smart Water Analytics](https://www.kaggle.com/competitions/acea-water-prediction/). Try to download the data and run the notebook to reproduce the results. 
 </details>
+
+<!---
 
 <details markdown="block">
 <summary> Basic concepts (Feb 28, 2025): model, loss, fit, learning rate, perceptron, ... </summary>
