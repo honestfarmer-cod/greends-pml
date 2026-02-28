@@ -44,7 +44,7 @@ We do an introduction to ML and compare it with *statistical modelling* using th
 
 
 <details markdown="block">
-<summary> 2. Basic concepts (Feb 28, 2025): model, loss, fit, learning rate, iterations, epochs </summary>
+<summary> 2. Basic concepts (Feb 27, 2026): model, loss, fit, learning rate, iterations, epochs </summary>
 
 The goal of the following classes is to understand how ML models can be trained in and used to solve regression and classification problems. We start by applying the machine learning approach to well-known statistical models like linear regression to illustrate the stepwise approach followed in ML. We extend the approach to binary classification problems. 
 
