@@ -48,10 +48,11 @@ We do an introduction to ML and compare it with *statistical modelling* using th
 
 The goal of the following classes is to understand how ML models can be trained in and used to solve regression and classification problems. We start by applying the machine learning approach to well-known statistical models like linear regression to illustrate the stepwise approach followed in ML. We extend the approach to binary classification problems. 
 
+- Discussions of the 1st assignment on Moodle (due date: March 11, 2026)
 - See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification
 - Check the [introductory video on LR](https://www.youtube.com/watch?v=3dhcmeOTZ_Q) using ML approach.
 - Basic concepts in Machine learning: *model*, *fit*, *epochs*, *loss*, *learning rate*, *weights*, for a simple regression problem. See [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md).
-- Exercise: pseudo-code to train a simple Linear Regression model. See [exercise](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_linear_regression_exercise_with_pseudo_code.md). 
+- Exercise: define a Linear Regression class to with methods `.fit`and `.predict` and visualize the itereative process to find the optimal weights. See [exercise](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_linear_regression_exercise_with_pseudo_code.md). 
 - Extend the optimization approach to a binary classification problem. See [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md).
 </details>
 
