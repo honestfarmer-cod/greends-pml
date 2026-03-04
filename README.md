@@ -57,34 +57,16 @@ The goal of the following classes is to understand how ML models can be trained 
 - Extend the optimization approach to a binary classification problem. See [Basic concepts notes](docs/T1_basic_concepts.md).
 </details>
 
+<details markdown="block">
+<summary> 3. Basic concepts (Mar 6, 2026): Classification, logistic regression, entropy and cross-entropy, regularization, batch size</summary>
+
+- See (Raschka et al, 2022), Chapter 3, pp 59-76
+- See [Basic concepts notes](docs/T2_basic_concepts_classification.md).
+- Check this very basic description of [Logistic Regression](https://www.youtube.com/watch?v=OlKL5nzm-1w)
+- Entropy, cross-entropy and KL Divergence: check video on [KL divergence 0-4'20](https://www.youtube.com/watch?v=tXE23653JrU) and [A Short Introduction to Entropy, Cross-Entropy and KL-Divergence, with application to ML](https://www.youtube.com/watch?v=ErfnhcEV1O8)
+- Exercise: standardize data, apply logistic regression; adjust regularization and batch size for the [Breast Cancer Wisconsin data set](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
 
 <!---
-
-<details markdown="block">
-<summary> Backpropagation (Mar 7, 2025): SGD, forward pass, backward pass, PyTorch, optimizer, ... </summary>
-
-
-- Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s)
-- See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification
-- See [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md). 
-- Revise solutions for the problems listed in the previous class.
-- Backpropagation and computation graph
-- `PyTorch` pipeline: loss, optimizer
-- The following table illustrates the changes from a basic Python script which is dependent on the model, loss, etc,  to a PyTorch higher-level script that can easily generalized to other models, loss functions or optimizer strategies.
-
-| Basic Python | PyTorch 
-|---|---
-| Define model explicitly | Use a pre-defined model
-|`def predict(x):`|`torch.nn.Linear(in_size,out_size)`
-| Define loss explicitly | Use a pre-defined loss function
-|`def loss(y,y_pred):`|`loss=torch.nn.MSEloss(y,y_pred)`
-| Loss optimization strategy | Use a pre-defined optimizer
-| Code explicitly| `optimizer=torch.optim.SGD(params, learn_rate)`
-| Compute *ad hoc* gradient | **Use built-in backpropagation mechanism**
-|`def gradient(x,y,y_pred):`|`loss.backward()`
-|Update weights explicitly| `optimizer.step()`
-
-- Description of assignment #1
 
 </details>
 
@@ -176,6 +158,34 @@ The goal of the following classes is to understand how ML models can be trained 
 - Pipeline that includes feature selection, followed by hyperparameter search: https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/wine_region_pipeline_XGB_CV_gridsearch_featselection.ipynb
 
 </details>
+
+
+<details markdown="block">
+<summary> Backpropagation (Mar 7, 2025): SGD, forward pass, backward pass, PyTorch, optimizer, ... </summary>
+
+
+- Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s)
+- See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification
+- See [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md). 
+- Revise solutions for the problems listed in the previous class.
+- Backpropagation and computation graph
+- `PyTorch` pipeline: loss, optimizer
+- The following table illustrates the changes from a basic Python script which is dependent on the model, loss, etc,  to a PyTorch higher-level script that can easily generalized to other models, loss functions or optimizer strategies.
+
+| Basic Python | PyTorch 
+|---|---
+| Define model explicitly | Use a pre-defined model
+|`def predict(x):`|`torch.nn.Linear(in_size,out_size)`
+| Define loss explicitly | Use a pre-defined loss function
+|`def loss(y,y_pred):`|`loss=torch.nn.MSEloss(y,y_pred)`
+| Loss optimization strategy | Use a pre-defined optimizer
+| Code explicitly| `optimizer=torch.optim.SGD(params, learn_rate)`
+| Compute *ad hoc* gradient | **Use built-in backpropagation mechanism**
+|`def gradient(x,y,y_pred):`|`loss.backward()`
+|Update weights explicitly| `optimizer.step()`
+
+</details>
+
 
 <details markdown="block">
 <summary> Data pipeline for deep learning  (May 9, 2025):  PyTorch, datasets, dataloaders</summary>
