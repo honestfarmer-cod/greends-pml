@@ -20,7 +20,7 @@ Links for class resources:
 Each description below includes the summary of the topics covered in the session, as well as the description of assignments and links to videos or other materials that students should work through.
 
 <details markdown="block">
-<summary> 1. Introduction (Feb 20, 2026) </summary>
+<summary><a name="T0"></a> 0. Introduction (Feb 20, 2026) </summary>
 
 We do an introduction to ML and compare it with *statistical modelling* using the simplest possible model, *linear regression*. We survey some of the problems that can be addressed with the techniques and tools that will be discussed during the semester. The examples will be run on Colab.
 
@@ -43,8 +43,8 @@ We do an introduction to ML and compare it with *statistical modelling* using th
 </details>
 
 
-<details markdown="block">
-<summary> 2. Basic concepts (Feb 27, 2026): model, loss, fit, learning rate, iterations, epochs </summary>
+<details id= markdown="block">
+<summary><a name="T1"></a> 1. Basic concepts (Feb 27, 2026): model, loss, fit, learning rate, iterations, epochs </summary>
 
 The goal of the following classes is to understand how ML models can be trained in and used to solve regression and classification problems. We start by applying the machine learning approach to well-known statistical models like linear regression to illustrate the stepwise approach followed in ML. We extend the approach to binary classification problems. 
 
@@ -58,7 +58,7 @@ The goal of the following classes is to understand how ML models can be trained 
 </details>
 
 <details markdown="block">
-<summary> 3. Basic concepts (Mar 6, 2026): Classification, logistic regression, entropy and cross-entropy, regularization, batch size</summary>
+<summary><a name="T2"></a> 2. Basic concepts (Mar 6, 2026): Classification, logistic regression, entropy and cross-entropy, regularization, batch size</summary>
 
 - See (Raschka et al, 2022), Chapter 3, pp 59-76
 - See [Basic concepts notes](docs/T2_basic_concepts_classification.md).
@@ -68,9 +68,77 @@ The goal of the following classes is to understand how ML models can be trained 
 - Exercise (part 2): adapt the `LogisticRegression` class so you can process training data in batches;
 - Exercise (part 3): adapt it further to include a regularization term in the loss function.
 
+  <details markdown="block">
+  <summary>Suggestion for the script (to be completed)</summary>
+    
+    ```python
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+    # from your_module import LogisticRegression  <-- to be implemented
+    
+    def main():
+        # 1. Load and Clean Data
+        df = pd.read_csv('data.csv')
+        # Drop unnecessary columns and encode target (M=1, B=0)
+        df = df.drop(['id', 'Unnamed: 32'], axis=1)
+        df['diagnosis'] = df['diagnosis'].map({'M': 1, 'B': 0})
+        
+        X = df.drop('diagnosis', axis=1).values
+        y = df['diagnosis'].values
+    
+        # 2. Split and Standardize
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+        
+        scaler = StandardScaler()
+        X_train_scaled = scaler.fit_transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+    
+        # 3. Build and Fit Model (Exercises 1, 2, & 3)
+        model = LogisticRegression(
+            learning_rate=0.01, 
+            epochs=1000, 
+            batch_size=32,      # Part 2
+            lambda_reg=0.1      # Part 3
+        )
+        model.fit(X_train_scaled, y_train)
+    
+        # 4. Evaluation
+        predictions = model.predict(X_test_scaled)
+        accuracy = (predictions == y_test).mean()
+        print(f"Model Accuracy: {accuracy * 100:.2%}")
+    
+        # 5. Visualization
+        # Calculate linear combination (z = Xw + b) and probabilities
+        z = X_test_scaled @ model.weights + model.bias
+        probs = model.predict_proba(X_test_scaled)
+    
+        plt.figure(figsize=(10, 6))
+        plt.scatter(z[y_test == 1], probs[y_test == 1], color='red', label='Malignant', alpha=0.5)
+        plt.scatter(z[y_test == 0], probs[y_test == 0], color='blue', label='Benign', alpha=0.5)
+        
+        # Plot the sigmoid curve
+        plt.title("Logistic Regression: Linear Combination vs Probability")
+        plt.xlabel("Linear Combination (z)")
+        plt.ylabel("Probability")
+        plt.legend()
+        plt.grid(True)
+        plt.show()
+    
+    if __name__ == "__main__":
+        main()
+      
+    ```
+  </details>
+  
+</details>
+
 <!---
 
-</details>
+
 
 <details markdown="block">
 <summary> Decision trees (Mar 14, 2025): entropy, over-fitting, train and development </summary>

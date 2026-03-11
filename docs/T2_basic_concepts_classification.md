@@ -62,7 +62,7 @@ During training of classification models, cross-entropy is a typical choice for 
 
 | Concept | What it answers | Formula Context |
 | --- | --- | --- |
-| **Entropy** | How much "chaos" is in this specific variable? | Uses only $p(x)$ |
+| **Entropy** | How much uncertainty for this variable? | Uses only $p(x)$ |
 | **Cross-Entropy** | How far off is my prediction ($q$) from the truth ($p$)? | Uses both $p(x)$ and $q(x)$ |
 
 
